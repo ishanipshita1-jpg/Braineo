@@ -244,8 +244,20 @@ Contributions are welcome! Here's how:
 - Inspired by classic arcade games and brain training apps
 - Font: [Google Fonts](https://fonts.google.com/)
 - Hosting: [Netlify](https://netlify.com)
-- Icons: Emoji characters
-- Made with ❤️ for peaceful minds
+
+## 📸 Screenshots
+
+### Homepage
+![Homepage](https://1drv.ms/i/c/1c54b1e27f5bf4d3/IQD74btdF_zXQJrq5R3s6VWzAVhTbN8RHQ65e_wvJMOQm-U?e=h8GLFz)
+
+### Snake Game
+![Snake Game](https://1drv.ms/i/c/1c54b1e27f5bf4d3/IQDdQyMuZwr2SqmvxO1foo8tASfR7lgbE4Gqs5gjCTIMBzw?e=yvixwO)
+
+### Math Playground
+![Math Game](https://1drv.ms/i/c/1c54b1e27f5bf4d3/IQCyDYY-utpOSoa96iH-n1Y9AQPwZuP3cS2jSvZhQidWLBE?e=BOGUCD)
+
+### Memory Match
+![Memory Game](https://1drv.ms/i/c/1c54b1e27f5bf4d3/IQCh_OaFviljQaySadXp9KMxAXEYtJt1CFzxpuEWBNp77fM?e=PxdgDS)
 
 ---
 
