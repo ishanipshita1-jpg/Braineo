@@ -248,17 +248,20 @@ Contributions are welcome! Here's how:
 ## 📸 Screenshots
 
 ### Homepage
-![Homepage](https://1drv.ms/i/c/1c54b1e27f5bf4d3/IQD74btdF_zXQJrq5R3s6VWzAVhTbN8RHQ65e_wvJMOQm-U?e=h8GLFz)
+![Homepage] <img width="1366" height="640" alt="homepage" src="https://github.com/user-attachments/assets/49876915-b307-493a-be45-a54697821fd2" />
+
 
 ### Snake Game
-![Snake Game](https://1drv.ms/i/c/1c54b1e27f5bf4d3/IQDdQyMuZwr2SqmvxO1foo8tASfR7lgbE4Gqs5gjCTIMBzw?e=yvixwO)
+![Snake Game] <img width="1362" height="646" alt="final snake" src="https://github.com/user-attachments/assets/a444fe90-f8e0-4e55-956b-96bd41e24466" />
+
 
 ### Math Playground
-![Math Game] <img width="1298" height="657" alt="memory" src="https://github.com/user-attachments/assets/5c5b4c98-9df0-4a10-9ea5-83ad040db2fd" />
+![Math Game] <img width="1355" height="643" alt="maths" src="https://github.com/user-attachments/assets/f40bee9d-a60e-4034-9346-6e74398e355e" />
 
 
 ### Memory Match
-![Memory Game](https://1drv.ms/i/c/1c54b1e27f5bf4d3/IQCh_OaFviljQaySadXp9KMxAXEYtJt1CFzxpuEWBNp77fM?e=PxdgDS)
+![Memory Game] <img width="1298" height="657" alt="memory" src="https://github.com/user-attachments/assets/8196782d-4994-4ec2-8dde-e369a7e43882" />
+
 
 ---
 
