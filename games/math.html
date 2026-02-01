@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Playground - BRAINEO</title>
+  <link rel="stylesheet" href="math.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Background Animation -->
+  <div class="background-animation">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
+
+  <!-- Game Container -->
+  <div class="game-container">
+    <!-- Header -->
+    <header class="game-header">
+      <a href="../index.html" class="back-button">
+        <span>←</span> Home
+      </a>
+      <h1 class="game-title">⚡ Math Playground</h1>
+      <button class="settings-button" id="settingsBtn">⚙️</button>
+    </header>
+
+    <!-- Game Stats -->
+    <div class="game-stats">
+      <div class="stat-box">
+        <span class="stat-label">Correct</span>
+        <span class="stat-value" id="correct">0</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Streak</span>
+        <span class="stat-value streak" id="streak">0</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Level</span>
+        <span class="stat-value" id="level">1</span>
+      </div>
+    </div>
+
+    <!-- Main Game Area -->
+    <div class="game-wrapper">
+      <!-- Start Screen -->
+      <div class="game-screen" id="startScreen">
+        <div class="screen-content">
+          <div class="icon-large">🧮</div>
+          <h2>Ready to Practice?</h2>
+          <p>Solve math problems at your own pace. No pressure, just learning!</p>
+          
+          <div class="difficulty-selector">
+            <h3>Choose Your Level</h3>
+            <div class="difficulty-options">
+              <button class="difficulty-btn active" data-difficulty="easy">
+                <span class="diff-icon">🌱</span>
+                <span class="diff-name">Beginner</span>
+                <span class="diff-desc">1-10, + -</span>
+              </button>
+              <button class="difficulty-btn" data-difficulty="medium">
+                <span class="diff-icon">🌿</span>
+                <span class="diff-name">Intermediate</span>
+                <span class="diff-desc">1-50, + - ×</span>
+              </button>
+              <button class="difficulty-btn" data-difficulty="hard">
+                <span class="diff-icon">🌳</span>
+                <span class="diff-name">Advanced</span>
+                <span class="diff-desc">1-100, all ops</span>
+              </button>
+            </div>
+          </div>
+          
+          <button class="primary-button" id="startButton">Start Practice</button>
+        </div>
+      </div>
+
+      <!-- Game Screen -->
+      <div class="game-screen hidden" id="gameScreen">
+        <div class="problem-area">
+          <div class="problem-display">
+            <span class="operand" id="operand1">0</span>
+            <span class="operator" id="operator">+</span>
+            <span class="operand" id="operand2">0</span>
+            <span class="equals">=</span>
+            <span class="question-mark">?</span>
+          </div>
+          
+          <div class="timer-bar">
+            <div class="timer-fill" id="timerFill"></div>
+          </div>
+          
+          <div class="answer-input">
+            <input type="number" id="answerInput" placeholder="Your answer" autofocus>
+            <button class="submit-button" id="submitAnswer">
+              <span>Submit</span>
+              <span class="arrow">→</span>
+            </button>
+          </div>
+          
+          <div class="feedback hidden" id="feedback">
+            <div class="feedback-icon" id="feedbackIcon"></div>
+            <div class="feedback-message" id="feedbackMessage"></div>
+          </div>
+        </div>
+        
+        <div class="problem-counter">
+          Problem <span id="currentProblem">1</span> of <span id="totalProblems">10</span>
+        </div>
+      </div>
+
+      <!-- Results Screen -->
+      <div class="game-screen hidden" id="resultsScreen">
+        <div class="screen-content">
+          <div class="results-icon" id="resultsIcon">🎉</div>
+          <h2 id="resultsTitle">Great Job!</h2>
+          
+          <div class="results-stats">
+            <div class="result-item">
+              <span class="result-label">Correct Answers</span>
+              <span class="result-value" id="finalCorrect">0/10</span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Accuracy</span>
+              <span class="result-value" id="finalAccuracy">0%</span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Best Streak</span>
+              <span class="result-value" id="finalStreak">0</span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Average Time</span>
+              <span class="result-value" id="avgTime">0s</span>
+            </div>
+          </div>
+          
+          <div class="encouragement-message" id="encouragementMessage"></div>
+          
+          <div class="button-group">
+            <button class="primary-button" id="playAgainButton">Practice More</button>
+            <button class="secondary-button" id="homeButton">Back to Home</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tips Section -->
+    <div class="tips-section">
+      <h3>💡 Learning Tips</h3>
+      <ul>
+        <li>Take your time - accuracy is more important than speed</li>
+        <li>Use mental math strategies you're comfortable with</li>
+        <li>Break down complex problems into simpler steps</li>
+        <li>Practice regularly to build confidence</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Settings Modal -->
+  <div class="modal hidden" id="settingsModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Settings</h2>
+        <button class="close-modal" id="closeSettings">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="setting-item">
+          <label for="problemCount">Problems per Session</label>
+          <select id="problemCount">
+            <option value="5">5 Problems</option>
+            <option value="10" selected>10 Problems</option>
+            <option value="15">15 Problems</option>
+            <option value="20">20 Problems</option>
+          </select>
+        </div>
+        <div class="setting-item">
+          <label for="timerToggle">Show Timer</label>
+          <input type="checkbox" id="timerToggle" checked>
+        </div>
+        <div class="setting-item">
+          <label for="soundToggle">Sound Effects</label>
+          <input type="checkbox" id="soundToggle" checked>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="primary-button" id="saveSettings">Save Settings</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="math.js"></script>
+</body>
+</html>
+

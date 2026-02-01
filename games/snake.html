@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake - BRAINEO</title>
+  <link rel="stylesheet" href="snake.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Background Animation -->
+  <div class="background-animation">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
+
+  <!-- Game Container -->
+  <div class="game-container">
+    <!-- Header -->
+    <header class="game-header">
+      <a href="../index.html" class="back-button" title="Back to Home">
+        <span>←</span> Home
+      </a>
+      <h1 class="game-title">🐍 Snake</h1>
+      <button class="settings-button" id="settingsBtn" title="Settings">⚙️</button>
+    </header>
+
+    <!-- Game Stats -->
+    <div class="game-stats">
+      <div class="stat-box">
+        <span class="stat-label">Score</span>
+        <span class="stat-value" id="score">0</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">High Score</span>
+        <span class="stat-value" id="highScore">0</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Level</span>
+        <span class="stat-value" id="level">1</span>
+      </div>
+    </div>
+
+    <!-- Game Canvas Area -->
+    <div class="canvas-wrapper">
+      <canvas id="gameCanvas" width="400" height="400"></canvas>
+      
+      <!-- Game Overlay Screens -->
+      <div class="game-overlay" id="startScreen">
+        <div class="overlay-content">
+          <h2>Ready to Play?</h2>
+          <p>Use arrow keys or WASD to control the snake</p>
+          <button class="primary-button" id="startButton">Start Game</button>
+          <div class="controls-info">
+            <div class="control-item">
+              <span class="key">↑ ↓ ← →</span>
+              <span class="desc">Arrow Keys</span>
+            </div>
+            <div class="control-item">
+              <span class="key">W A S D</span>
+              <span class="desc">Alternative</span>
+            </div>
+            <div class="control-item">
+              <span class="key">SPACE</span>
+              <span class="desc">Pause/Resume</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-overlay hidden" id="pauseScreen">
+        <div class="overlay-content">
+          <h2>Game Paused</h2>
+          <p>Take a break and relax 🌟</p>
+          <button class="primary-button" id="resumeButton">Resume</button>
+          <button class="secondary-button" id="restartFromPause">Restart</button>
+          <button class="secondary-button" id="quitButton">Quit to Home</button>
+        </div>
+      </div>
+
+      <div class="game-overlay hidden" id="gameOverScreen">
+        <div class="overlay-content">
+          <h2>Game Over!</h2>
+          <p class="final-score">Score: <strong id="finalScore">0</strong></p>
+          <p class="encouragement" id="encouragement">Great effort!</p>
+          <button class="primary-button" id="playAgainButton">Play Again</button>
+          <button class="secondary-button" id="homeButton">Back to Home</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Controls -->
+    <div class="mobile-controls" id="mobileControls">
+      <div class="d-pad">
+        <button class="d-pad-btn up" data-direction="up">↑</button>
+        <button class="d-pad-btn left" data-direction="left">←</button>
+        <button class="d-pad-btn down" data-direction="down">↓</button>
+        <button class="d-pad-btn right" data-direction="right">→</button>
+        <button class="d-pad-btn center" id="mobilePause">⏸</button>
+      </div>
+    </div>
+
+    <!-- Tips Section -->
+    <div class="tips-section">
+      <h3>💡 Tips for Success</h3>
+      <ul>
+        <li>Plan your moves ahead - think before turning</li>
+        <li>Use the walls to your advantage for tight spaces</li>
+        <li>Stay calm - rushing leads to mistakes</li>
+        <li>The game speeds up as you progress - stay focused!</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Settings Modal -->
+  <div class="modal hidden" id="settingsModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Settings</h2>
+        <button class="close-modal" id="closeSettings">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="setting-item">
+          <label for="difficultySelect">Difficulty</label>
+          <select id="difficultySelect">
+            <option value="easy">Easy (Relaxed)</option>
+            <option value="normal" selected>Normal (Balanced)</option>
+            <option value="hard">Hard (Challenge)</option>
+          </select>
+        </div>
+        <div class="setting-item">
+          <label for="soundToggle">Sound Effects</label>
+          <input type="checkbox" id="soundToggle" checked>
+        </div>
+        <div class="setting-item">
+          <label for="gridToggle">Show Grid</label>
+          <input type="checkbox" id="gridToggle" checked>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="primary-button" id="saveSettings">Save Settings</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sound Effects (Data URLs for portability) -->
+  <audio id="eatSound" preload="auto"></audio>
+  <audio id="gameOverSound" preload="auto"></audio>
+
+  <script src="snake.js"></script>
+</body>
+</html>

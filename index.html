@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BRAINEO - Mind Training Games</title>
+  <meta name="description" content="Train your mind with peaceful, engaging games. Snake, Math Playground, and Memory Match.">
+  
+  <!-- PWA Meta Tags -->
+  <meta name="theme-color" content="#6366f1">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="BRAINEO">
+  <link rel="manifest" href="/manifest.json">
+  
+  <!-- Icons -->
+   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+   <link rel="shortcut icon" href="/favicon.ico" />
+   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+   <meta name="apple-mobile-web-app-title" content="Braineo" />
+   <link rel="manifest" href="/site.webmanifest" />
+  
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="pwa-styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Ambient Music -->
+  <audio id="ambient" loop preload="auto">
+    <source src="/assets/ambient.mp3" type="audio/mpeg">
+    <source src="assets/ambient.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Music Toggle Button -->
+  <button id="musicToggle" aria-label="Toggle ambient music" title="Toggle Music">
+    <span class="icon">🔊</span>
+  </button>
+
+  <!-- Animated Background -->
+  <div class="background-animation">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <main class="wrapper">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="logo-container">
+        <h1 class="logo">BRAINEO</h1>
+        <div class="logo-underline"></div>
+      </div>
+      <p class="tagline">Train your mind. Play peacefully. Improve daily.</p>
+      <div class="stats">
+        <div class="stat-item">
+          <span class="stat-number" id="gamesPlayed">0</span>
+          <span class="stat-label">Games Played</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="totalScore">0</span>
+          <span class="stat-label">Total Score</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Games Available</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Games Grid -->
+    <section class="games">
+      <a href="games/snake.html" class="card" data-game="snake">
+        <div class="card-glow"></div>
+        <div class="card-content">
+          <div class="card-icon">🐍</div>
+          <h2 class="card-title">Snake</h2>
+          <p class="card-description">Classic arcade nostalgia with smooth, relaxing gameplay</p>
+          <div class="card-tags">
+            <span class="tag">Classic</span>
+            <span class="tag">Smooth</span>
+            <span class="tag">Fun</span>
+          </div>
+          <div class="card-stats">
+            <span>🏆 High Score: <strong id="snakeHighScore">0</strong></span>
+          </div>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="games/math.html" class="card" data-game="math">
+        <div class="card-glow"></div>
+        <div class="card-content">
+          <div class="card-icon">⚡</div>
+          <h2 class="card-title">Math Playground</h2>
+          <p class="card-description">Sharpen your skills with gentle, pressure-free challenges</p>
+          <div class="card-tags">
+            <span class="tag">Educational</span>
+            <span class="tag">Relaxing</span>
+            <span class="tag">Progressive</span>
+          </div>
+          <div class="card-stats">
+            <span>🎯 Best Streak: <strong id="mathHighScore">0</strong></span>
+          </div>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="games/memory.html" class="card" data-game="memory">
+        <div class="card-glow"></div>
+        <div class="card-content">
+          <div class="card-icon">🧠</div>
+          <h2 class="card-title">Memory Match</h2>
+          <p class="card-description">Match cards and strengthen your memory in a zen-like flow</p>
+          <div class="card-tags">
+            <span class="tag">Focus</span>
+            <span class="tag">Memory</span>
+            <span class="tag">Peaceful</span>
+          </div>
+          <div class="card-stats">
+            <span>🎯 Best Score: <strong id="memoryHighScore">0%</strong></span>
+          </div>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p class="footer-main">Built by Ishan • Made with ❤️</p>
+      <p class="footer-sub">Offline • Relax • Play</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="pwa-installer.js"></script>
+</body>
+</html>

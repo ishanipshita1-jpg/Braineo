@@ -1,0 +1,399 @@
+/* ============================================
+   PWA-SPECIFIC STYLES
+   Install button, notifications, offline indicator
+   ============================================ */
+
+/* Install App Button */
+.install-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px 25px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 9999;
+  animation: slideInUp 0.5s ease, pulse 2s infinite ease-in-out 1s;
+  transition: all 0.3s ease;
+}
+
+.install-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(102, 126, 234, 0.6);
+}
+
+.install-button:active {
+  transform: translateY(-1px);
+}
+
+.install-icon {
+  font-size: 1.3rem;
+}
+
+.install-close {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 24px;
+  height: 24px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid white;
+  border-radius: 50%;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.install-close:hover {
+  background: rgba(255, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Install Success Message */
+.install-success {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+  z-index: 10000;
+  animation: slideInDown 0.5s ease, slideOutUp 0.5s ease 4.5s forwards;
+}
+
+.success-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+}
+
+.success-icon {
+  font-size: 1.5rem;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes slideOutUp {
+  from {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-50px);
+  }
+}
+
+/* Update Available Banner */
+.update-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  padding: 15px;
+  z-index: 10000;
+  animation: slideInDown 0.5s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.update-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  font-weight: 600;
+}
+
+.update-button,
+.dismiss-button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.update-button {
+  background: white;
+  color: #d97706;
+}
+
+.update-button:hover {
+  background: #f3f4f6;
+  transform: scale(1.05);
+}
+
+.dismiss-button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.dismiss-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Connection Status Indicator */
+.connection-status {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  padding: 12px 20px;
+  border-radius: 25px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 9998;
+  animation: slideInRight 0.5s ease, slideOutRight 0.5s ease 2.5s forwards;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.connection-status.online {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.connection-status.offline {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+}
+
+/* Notification Toast */
+.notification-toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-weight: 500;
+  z-index: 10001;
+  opacity: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.notification-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Share Button (for games) */
+.share-button {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.share-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.share-button .icon {
+  font-size: 1.1rem;
+}
+
+/* Offline Page Indicator */
+.offline-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: 600;
+  z-index: 9999;
+  animation: slideInDown 0.5s ease;
+}
+
+/* Loading Spinner for PWA */
+.pwa-loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 10002;
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* App Badge (for notifications count) */
+.app-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #ef4444;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 10px;
+  min-width: 18px;
+  text-align: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .install-button {
+    bottom: 15px;
+    right: 15px;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .install-text {
+    display: none;
+  }
+  
+  .install-icon {
+    font-size: 1.5rem;
+  }
+  
+  .connection-status {
+    bottom: 70px;
+    right: 15px;
+    font-size: 0.85rem;
+  }
+  
+  .update-content {
+    font-size: 0.9rem;
+  }
+}
+
+/* Standalone Mode Detection */
+@media (display-mode: standalone) {
+  /* Hide install button when app is installed */
+  .install-button {
+    display: none !important;
+  }
+  
+  /* Add app-specific styles */
+  body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  /* Show installed indicator */
+  body::before {
+    content: "📱 Installed App";
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    z-index: 1;
+    pointer-events: none;
+  }
+}
+
+@media (display-mode: fullscreen) {
+  /* Fullscreen mode styles */
+  body {
+    padding: 0;
+  }
+}
+
+/* iOS-specific PWA styles */
+@supports (-webkit-touch-callout: none) {
+  .install-button {
+    bottom: 25px;
+    /* Account for iOS home indicator */
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "BRAINEO - Mind Training Games",
+  "short_name": "BRAINEO",
+  "description": "Train your mind with peaceful, engaging games. Snake, Math Playground, and Memory Match.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#050816",
+  "theme_color": "#6366f1",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["games", "education", "entertainment"],
+  "shortcuts": [
+    {
+      "name": "Play Snake",
+      "short_name": "Snake",
+      "description": "Start Snake game quickly",
+      "url": "/games/snake.html"
+    },
+    {
+      "name": "Math Practice",
+      "short_name": "Math",
+      "description": "Start Math Playground",
+      "url": "/games/math.html"
+    },
+    {
+      "name": "Memory Match",
+      "short_name": "Memory",
+      "description": "Start Memory Match game",
+      "url": "/games/memory.html"
+    }
+  ],
+  "prefer_related_applications": false
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Difficulty</title>
+  <link rel="stylesheet" href="../games/snake.css">
+</head>
+<body>
+
+<div class="overlay">
+  <h2>Select Difficulty</h2>
+
+  <label>Snake Speed</label>
+  <select id="speed">
+    <option value="140">Easy</option>
+    <option value="110">Medium</option>
+    <option value="80">Hard</option>
+  </select>
+
+  <label>Maze Level (1–10)</label>
+  <input type="range" min="1" max="10" value="1" id="level">
+
+  <p>Level: <span id="lvl">1</span></p>
+
+  <button id="start">Start Game</button>
+</div>
+
+<script src="difficulty.js"></script>
+</body>
+</html>
