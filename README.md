@@ -254,7 +254,8 @@ Contributions are welcome! Here's how:
 ![Snake Game](https://1drv.ms/i/c/1c54b1e27f5bf4d3/IQDdQyMuZwr2SqmvxO1foo8tASfR7lgbE4Gqs5gjCTIMBzw?e=yvixwO)
 
 ### Math Playground
-![Math Game](https://1drv.ms/i/c/1c54b1e27f5bf4d3/IQCyDYY-utpOSoa96iH-n1Y9AQPwZuP3cS2jSvZhQidWLBE?e=BOGUCD)
+![Math Game](<img width="1298" height="657" alt="memory" src="https://github.com/user-attachments/assets/5c5b4c98-9df0-4a10-9ea5-83ad040db2fd" />)
+
 
 ### Memory Match
 ![Memory Game](https://1drv.ms/i/c/1c54b1e27f5bf4d3/IQCh_OaFviljQaySadXp9KMxAXEYtJt1CFzxpuEWBNp77fM?e=PxdgDS)
